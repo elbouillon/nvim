@@ -1,7 +1,6 @@
 set clipboard+=unnamedplus
 let enable_bold_font = 1
 let mapleader = ','
-imap éé <Esc>
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 """"""""""""""""""""""""
@@ -64,6 +63,7 @@ Plug 'junegunn/vim-easy-align'
 " All Tpope super usefull plugins
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-endwise'
@@ -71,11 +71,47 @@ Plug 'tpope/vim-repeat'
 Plug 'vim-airline/vim-airline'
 let g:airline_powerline_fonts = 1
 Plug 'Valloric/YouCompleteMe'
+let g:ycm_key_list_select_completion=[]
 Plug 'kien/ctrlp.vim'
 Plug 'rking/ag.vim'
+
+Plug 'thoughtbot/vim-rspec'
+" RSpec.vim mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader><Leader>s :call RunNearestSpec()<CR>
+map <Leader><Leader>l :call RunLastSpec()<CR>
+map <Leader><Leader>a :call RunAllSpecs()<CR>
+let g:rspec_runner = "os_x_iterm"
+
+Plug 'tpope/vim-dispatch'
+Plug 'radenling/vim-dispatch-neovim'
+let g:rspec_command = "Dispatch rspec --color --format=progress --no-profile {spec}"
+
 Plug 'scrooloose/syntastic'
-let g:syntastic_enable_signs=1
-let g:syntastic_quiet_messages = {'level': 'warnings'}
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+Plug 'scrooloose/nerdtree'
+
+" syntax highlighting
+Plug 'posva/vim-vue'
+Plug 'slim-template/vim-slim'
+
+" snippets
+Plug 'SirVer/ultisnips'
+" let g:UltiSnipsExpandTrigger="<C-j>"
+Plug 'honza/vim-snippets'
+" let g:UltiSnipsExpandTrigger="<C-$>"
+" let g:UltiSnipsJumpForwardTrigger="<C-b>"
+" let g:UltiSnipsJumpBackwardTrigger="<C-z>"
+" let g:UltiSnipsEditSplit="vertical"
+
+
 call plug#end()
 
 """"""""""""""""""""""""""""""
@@ -96,4 +132,13 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-nnoremap <silent> <C-n> :nohlsearch<CR><C-L>
+" resize vertical split
+map <leader>h 20<C-w>>
+map <leader>l 20<C-w><
+
+nnoremap <leader>ns :nohlsearch<CR><C-L>
+nnoremap <C-n> :NERDTreeToggle<CR>
+nnoremap <leader>s :w<CR>
+nnoremap <leader>r :source /Users/mkurmann/.config/nvim/init.vim<CR>
+nnoremap <leader>q :q<CR>
+imap éé <Esc>

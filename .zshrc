@@ -16,7 +16,7 @@ ZSH_THEME="robbyrussell"
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="false"
 
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
@@ -50,11 +50,12 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git autojump brew git-flow)
+plugins=(git autojump brew git-flow rbenv bundler)
 
 # User configuration
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -91,5 +92,6 @@ alias rom="source ~/.zshrc"
 alias git="/usr/local/bin/git"
 # edit Neovim config
 alias envim="nvim ~/.config/nvim/init.vim"
+alias vim="nvim"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
