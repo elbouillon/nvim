@@ -76,6 +76,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'rking/ag.vim'
 
 Plug 'thoughtbot/vim-rspec'
+Plug 'keith/rspec.vim'
 " RSpec.vim mappings
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader><Leader>s :call RunNearestSpec()<CR>
