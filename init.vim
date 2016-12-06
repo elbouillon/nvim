@@ -75,8 +75,8 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1
 Plug 'ctrlpvim/ctrlp.vim'
-let g:ctrlp_custom_ignore = 'node_modules\DS_Store\|git'
-let g:ctrlp_match_window = 'top,order:ttb,min:1,max:30,results:30'
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:30,results:30'
 nnoremap <leader>. :CtrlPTag<cr>
 Plug 'rking/ag.vim'
 
