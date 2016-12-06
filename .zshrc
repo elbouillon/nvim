@@ -92,6 +92,9 @@ alias rom="source ~/.zshrc"
 alias git="/usr/local/bin/git"
 # edit Neovim config
 alias envim="nvim ~/.config/nvim/init.vim"
+alias evim='envim'
 alias vim="nvim"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

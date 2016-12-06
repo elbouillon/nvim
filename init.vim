@@ -1,6 +1,7 @@
 set clipboard+=unnamedplus
 let enable_bold_font = 1
 let mapleader = ','
+let backupcopy = 1
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 """"""""""""""""""""""""
@@ -70,9 +71,12 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-repeat'
 Plug 'vim-airline/vim-airline'
 let g:airline_powerline_fonts = 1
-Plug 'Valloric/YouCompleteMe'
-let g:ycm_key_list_select_completion=[]
-Plug 'kien/ctrlp.vim'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_smart_case = 1
+Plug 'ctrlpvim/ctrlp.vim'
+let g:ctrlp_custom_ignore = 'node_modules\DS_Store\|git'
+let g:ctrlp_match_window = 'top,order:ttb,min:1,max:30,results:30'
 Plug 'rking/ag.vim'
 
 Plug 'thoughtbot/vim-rspec'
@@ -112,6 +116,7 @@ Plug 'honza/vim-snippets'
 " let g:UltiSnipsJumpBackwardTrigger="<C-z>"
 " let g:UltiSnipsEditSplit="vertical"
 
+Plug 'kchmck/vim-coffee-script'
 
 call plug#end()
 
@@ -137,7 +142,7 @@ nnoremap <C-l> <C-w>l
 map <leader>h 20<C-w>>
 map <leader>l 20<C-w><
 
-nnoremap <leader>ns :nohlsearch<CR><C-L>
+nnoremap <leader><space> :nohlsearch<CR><C-L>
 nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap <leader>s :w<CR>
 nnoremap <leader>r :source /Users/mkurmann/.config/nvim/init.vim<CR>
