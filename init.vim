@@ -21,7 +21,7 @@ set cursorline
 
 set noerrorbells        " No beeps.
 set modeline            " Enable modeline.
-set esckeys             " Cursor keys in insert mode.
+" set esckeys             " Cursor keys in insert mode.
 set linespace=0         " Set line-spacing to minimum.
 set nojoinspaces        " Prevents inserting two spaces after punctuation on a join (J)
 
@@ -118,6 +118,8 @@ Plug 'honza/vim-snippets'
 " let g:UltiSnipsEditSplit="vertical"
 
 Plug 'kchmck/vim-coffee-script'
+" https://github.com/christoomey/vim-tmux-navigator
+Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()
 
@@ -142,6 +144,10 @@ nnoremap <C-l> <C-w>l
 " resize vertical split
 map <leader>h 20<C-w>>
 map <leader>l 20<C-w><
+
+" vv to generate new vertical split
+nnoremap <silent> vv <C-w>v
+nnoremap <silent> vh <C-w>s
 
 nnoremap <leader><space> :nohlsearch<CR><C-L>
 nnoremap <C-n> :NERDTreeToggle<CR>
