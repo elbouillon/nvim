@@ -94,6 +94,7 @@ alias git="/usr/local/bin/git"
 alias envim="nvim ~/.config/nvim/init.vim"
 alias evim='envim'
 alias vim="nvim"
+alias emux=" nvim ~/.tmux.conf"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
