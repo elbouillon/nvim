@@ -100,7 +100,6 @@ alias envim="nvim ~/.config/nvim/init.vim"
 alias evim='envim'
 alias vim="nvim"
 alias emux="nvim ~/.tmux.conf"
-
 #applications aliases
 alias getpplsadb="cx backup list --latest --stack ppl-management2 | grep -Eo '[0-9]{8}' | xargs -n1 cx backup download --stack ppl-management2"
 
