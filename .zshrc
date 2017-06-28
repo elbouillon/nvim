@@ -8,6 +8,9 @@ export ZSH=/Users/mkurmann/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 # ZSH_THEME="agnoster"
 
+# https://github.com/robwilliams/dotfiles/commit/46c5cda492f03c34151bc46366a621f48ca36d34
+unsetopt nomatch
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -50,13 +53,15 @@ DISABLE_AUTO_UPDATE="false"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git autojump brew git-flow rbenv bundler)
+plugins=(git autojump brew git-flow rbenv bundler osx colored-man-pages history docker)
 
 # User configuration
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 # export MANPATH="/usr/local/man:$MANPATH"
+# https://yarnpkg.com/en/docs/install
+export PATH="$PATH:`yarn global bin`"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -94,7 +99,9 @@ alias git="/usr/local/bin/git"
 alias envim="nvim ~/.config/nvim/init.vim"
 alias evim='envim'
 alias vim="nvim"
-alias emux=" nvim ~/.tmux.conf"
+alias emux="nvim ~/.tmux.conf"
+#applications aliases
+alias getpplsadb="cx backup list --latest --stack ppl-management2 | grep -Eo '[0-9]{8}' | xargs -n1 cx backup download --stack ppl-management2"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
