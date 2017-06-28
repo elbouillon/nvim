@@ -3,7 +3,6 @@ let enable_bold_font = 1
 let mapleader = ','
 let backupcopy = 1
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 """"""""""""""""""""""""
 " Base config
 """"""""""""""""""""""""
@@ -21,7 +20,7 @@ set cursorline
 
 set noerrorbells        " No beeps.
 set modeline            " Enable modeline.
-set esckeys             " Cursor keys in insert mode.
+" set esckeys             " Cursor keys in insert mode.
 set linespace=0         " Set line-spacing to minimum.
 set nojoinspaces        " Prevents inserting two spaces after punctuation on a join (J)
 
@@ -74,6 +73,7 @@ let g:airline_powerline_fonts = 1
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1
+let g:python3_host_prog='/usr/local/bin/python3'
 Plug 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:30,results:30'
@@ -89,6 +89,7 @@ map <Leader><Leader>l :call RunLastSpec()<CR>
 map <Leader><Leader>a :call RunAllSpecs()<CR>
 let g:rspec_runner = "os_x_iterm"
 
+Plug 'hron84/vim-Guardfile'
 Plug 'tpope/vim-dispatch'
 Plug 'radenling/vim-dispatch-neovim'
 let g:rspec_command = "Dispatch rspec --color --format=progress --no-profile {spec}"
@@ -118,6 +119,17 @@ Plug 'honza/vim-snippets'
 " let g:UltiSnipsEditSplit="vertical"
 
 Plug 'kchmck/vim-coffee-script'
+
+Plug 'janko-m/vim-test'
+let test#strategy = "neovim"
+" let test#ruby#minitest#file_pattern = '_spec\.rb' " the default is '_test\.rb'
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>T :TestFile<CR>
+nmap <silent> <leader>ta :TestSuite<CR>
+nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>
+
+Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()
 
