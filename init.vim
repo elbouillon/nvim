@@ -131,8 +131,6 @@ nmap <silent> <leader>ta :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>g :TestVisit<CR>
 
-Plug 'christoomey/vim-tmux-navigator'
-
 call plug#end()
 
 """"""""""""""""""""""""""""""
