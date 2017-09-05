@@ -164,6 +164,6 @@ nnoremap <silent> vh <C-w>s
 nnoremap <leader><space> :nohlsearch<CR><C-L>
 nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap <leader>s :w<CR>
-nnoremap <leader>r :source /Users/mkurmann/.config/nvim/init.vim<CR>
+nnoremap <leader>r :source $HOME/.config/nvim/init.vim<CR>
 nnoremap <leader>q :q<CR>
 imap éé <Esc>
