@@ -1,5 +1,12 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/mkurmann/.oh-my-zsh
+if [[ `uname` == 'Darwin' ]]
+then
+  # we are on mac
+  export ZSH=/Users/mkurmann/.oh-my-zsh
+else
+  # we are on linux
+  export ZSH=/home/mkurmann/.oh-my-zsh
+fi
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -57,8 +64,17 @@ plugins=(git autojump brew git-flow rbenv bundler osx colored-man-pages history 
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
+export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+if [[ `uname` == 'Linux' ]]
+then
+  export PATH=$PATH:/usr/share
+else
+  # fix problem using osx git instead of the brand new one from brew
+  alias git="/usr/local/bin/git"
+  export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
+fi
+
 # export MANPATH="/usr/local/man:$MANPATH"
 # https://yarnpkg.com/en/docs/install
 export PATH="$PATH:`yarn global bin`"
@@ -93,8 +109,6 @@ fi
 alias eom="nvim ~/.zshrc"
 # Reload after editing ZSHRC
 alias rom="source ~/.zshrc"
-# fix problem using osx git instead of the brand new one from brew
-alias git="/usr/local/bin/git"
 # edit Neovim config
 alias envim="nvim ~/.config/nvim/init.vim"
 alias evim='envim'
