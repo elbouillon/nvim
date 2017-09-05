@@ -64,16 +64,18 @@ plugins=(git autojump brew git-flow rbenv bundler osx colored-man-pages history 
 
 # User configuration
 
-export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
 if [[ `uname` == 'Linux' ]]
 then
-  export PATH=$PATH:/usr/share
+  export PATH=$PATH:~/.rbenv/shims:/usr/share
+  # export PATH=$PATH:~/.rbenv/shims:~/.rbenv/versions/2.2.3/lib/gems/2.2.0/gems:/usr/share
 else
   # fix problem using osx git instead of the brand new one from brew
   alias git="/usr/local/bin/git"
   export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 fi
+
+export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
 # export MANPATH="/usr/local/man:$MANPATH"
 # https://yarnpkg.com/en/docs/install

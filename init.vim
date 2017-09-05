@@ -73,7 +73,9 @@ let g:airline_powerline_fonts = 1
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1
-let g:python3_host_prog='/usr/local/bin/python3'
+if has("mac")
+  let g:python3_host_prog='/usr/local/bin/python3'
+endif
 Plug 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:30,results:30'
