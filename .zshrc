@@ -122,3 +122,7 @@ alias getpplsadb="cx backup list --latest --stack ppl-management2 | grep -Eo '[0
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+case $- in *i*)
+  if [ -z "$TMUX" ]; then exec tmux; fi;;
+esac
