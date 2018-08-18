@@ -60,7 +60,7 @@ DISABLE_AUTO_UPDATE="false"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git autojump brew git-flow rbenv bundler osx colored-man-pages history docker tmuxinator)
+plugins=(git autojump brew git-flow rbenv bundler osx colored-man-pages history docker tmuxinator docker-compose)
 
 # User configuration
 
@@ -86,12 +86,7 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='nvim'
-fi
+export EDITOR='vim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
