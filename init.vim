@@ -57,7 +57,10 @@ set undofile
 """"""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
 " Colorscheme
+Plug 'altercation/vim-colors-solarized'
+Plug 'henrynewcomer/vim-theme-papaya'
 Plug 'mrtazz/molokai.vim'
+Plug 'morhetz/gruvbox'
 " A simple, easy-to-use Vim alignment plugin.
 Plug 'junegunn/vim-easy-align'
 " All Tpope super usefull plugins
@@ -140,7 +143,8 @@ call plug#end()
 """"""""""""""""""""""""""""""
 " color and theme
 """"""""""""""""""""""""""""""
-color molokai
+set background=dark
+color gruvbox
 """"""""""""""""""""""""""""""
 
 map <leader>a :Ag!<space>
