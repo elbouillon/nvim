@@ -60,7 +60,7 @@ DISABLE_AUTO_UPDATE="false"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git autojump brew git-flow rbenv bundler osx colored-man-pages history docker tmuxinator docker-compose)
+plugins=(git autojump git-flow rbenv bundler osx colored-man-pages history docker tmuxinator docker-compose)
 
 # User configuration
 
@@ -86,7 +86,7 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-export EDITOR='vim'
+export EDITOR='nvim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -117,7 +117,3 @@ alias getpplsadb="cx backup list --latest --stack ppl-management2 | grep -Eo '[0
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-case $- in *i*)
-  if [ -z "$TMUX" ]; then exec tmux; fi;;
-esac
