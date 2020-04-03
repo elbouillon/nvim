@@ -104,6 +104,7 @@ export EDITOR='nvim'
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # EDIT ZSHRC
 alias eom="nvim ~/.zshrc"
+alias ezsh='eom'
 # Reload after editing ZSHRC
 alias rom="source ~/.zshrc"
 # edit Neovim config
@@ -117,3 +118,6 @@ alias getpplsadb="cx backup list --latest --stack ppl-management2 | grep -Eo '[0
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"

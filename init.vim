@@ -33,9 +33,15 @@ set gdefault            " Use 'g' flag by default with :s/foo/bar/.
 set magic 
 "
 """"""""""""""""""""""""
+" Vimrc local config
+""""""""""""""""""""""""
+set exrc
+set secure
+""""""""""""""""""""""""
 " Shortcuts
 """"""""""""""""""""""""
 nnoremap Q @q   " Use Q to execute default register.
+nmap <CR> o<Esc>
 
 """"""""""""""""""""""""
 "Turn Off Swap Files 
@@ -71,11 +77,12 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-ragtag'
 Plug 'vim-airline/vim-airline'
 let g:airline_powerline_fonts = 1
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_smart_case = 1
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 if has("mac")
   let g:python3_host_prog='/usr/local/bin/python3'
 endif
@@ -86,13 +93,6 @@ nnoremap <leader>. :CtrlPTag<cr>
 Plug 'rking/ag.vim'
 
 Plug 'thoughtbot/vim-rspec'
-Plug 'keith/rspec.vim'
-" RSpec.vim mappings
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader><Leader>s :call RunNearestSpec()<CR>
-map <Leader><Leader>l :call RunLastSpec()<CR>
-map <Leader><Leader>a :call RunAllSpecs()<CR>
-let g:rspec_runner = "os_x_iterm"
 
 Plug 'hron84/vim-Guardfile'
 Plug 'tpope/vim-dispatch'
@@ -129,6 +129,8 @@ Plug 'christoomey/vim-tmux-navigator'
 
 Plug 'janko-m/vim-test'
 let test#strategy = "neovim"
+let test#ruby#rspec#executable = 'docker-compose run --rm test rspec'
+
 " let test#ruby#minitest#file_pattern = '_spec\.rb' " the default is '_test\.rb'
 nmap <silent> <leader>t :TestNearest<CR>
 nmap <silent> <leader>T :TestFile<CR>
@@ -137,6 +139,12 @@ nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>g :TestVisit<CR>
 
 Plug 'wakatime/vim-wakatime'
+Plug 'benmills/vimux'
+" Plug 'davydovanton/vim-html2slim'
+Plug 'mattn/emmet-vim'
+" let g:user_emmet_leader_key=','
+" la config marche pas... remappage
+imap ,, <C-y>,
 
 call plug#end()
 
