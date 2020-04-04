@@ -72,7 +72,7 @@ Plug 'junegunn/vim-easy-align'
 " All Tpope super usefull plugins
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-bundler'
+" Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-endwise'
@@ -92,12 +92,7 @@ let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:30,results:30'
 nnoremap <leader>. :CtrlPTag<cr>
 Plug 'rking/ag.vim'
 
-Plug 'thoughtbot/vim-rspec'
-
 Plug 'hron84/vim-Guardfile'
-Plug 'tpope/vim-dispatch'
-Plug 'radenling/vim-dispatch-neovim'
-let g:rspec_command = "Dispatch rspec --color --format=progress --no-profile {spec}"
 
 Plug 'scrooloose/syntastic'
 set statusline+=%#warningmsg#
@@ -113,22 +108,19 @@ Plug 'scrooloose/nerdtree'
 " syntax highlighting
 Plug 'posva/vim-vue'
 Plug 'slim-template/vim-slim'
-
 " snippets
-Plug 'SirVer/ultisnips'
-" let g:UltiSnipsExpandTrigger="<C-j>"
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
-" let g:UltiSnipsExpandTrigger="<C-$>"
-" let g:UltiSnipsJumpForwardTrigger="<C-b>"
-" let g:UltiSnipsJumpBackwardTrigger="<C-z>"
-" let g:UltiSnipsEditSplit="vertical"
 
 Plug 'kchmck/vim-coffee-script'
 " https://github.com/christoomey/vim-tmux-navigator
 Plug 'christoomey/vim-tmux-navigator'
 
 Plug 'janko-m/vim-test'
-let test#strategy = "neovim"
+" let test#strategy = 'neovim'
+let test#strategy = "basic"
 let test#ruby#rspec#executable = 'docker-compose run --rm test rspec'
 
 " let test#ruby#minitest#file_pattern = '_spec\.rb' " the default is '_test\.rb'
@@ -142,10 +134,10 @@ Plug 'wakatime/vim-wakatime'
 Plug 'benmills/vimux'
 " Plug 'davydovanton/vim-html2slim'
 Plug 'mattn/emmet-vim'
-" let g:user_emmet_leader_key=','
+let g:user_emmet_leader_key=','
 " la config marche pas... remappage
-imap ,, <C-y>,
-
+" imap ,, <C-y>,
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 """"""""""""""""""""""""""""""
@@ -181,3 +173,6 @@ nnoremap <leader>s :w<CR>
 nnoremap <leader>r :source $HOME/.config/nvim/init.vim<CR>
 nnoremap <leader>q :q<CR>
 imap éé <Esc>
+
+nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
+vnoremap <Space> zf
