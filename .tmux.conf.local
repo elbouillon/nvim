@@ -42,7 +42,7 @@ tmux_conf_new_session_prompt=false
 # RGB 24-bit colour support (tmux >= 2.2), possible values are:
 #  - true
 #  - false (default)
-tmux_conf_theme_24b_colour=false
+tmux_conf_theme_24b_colour=true
 
 # window style
 tmux_conf_theme_window_fg='default'
@@ -295,4 +295,6 @@ tmux_conf_copy_to_os_clipboard=false
 # move status line to top
 set -g status-position top
 
-set-option -sa terminal-overrides ',XXX:RGB'
+# Terminal type configuration
+# set-option -sa terminal-overrides ',xterm-256color:RGB'
+set -sa terminal-overrides ",xterm-256color*:RGB"
