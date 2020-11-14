@@ -53,6 +53,8 @@ set shortmess+=c
 " ===                           PLUGIN SETUP                               === "
 " ============================================================================ "
 nnoremap <C-P> :Files<cr>
+nnoremap <C-L> :Lines<cr>
+nnoremap <Leader>a :Ag<cr>
 nnoremap <Leader>b :Buffers<cr>
 nnoremap <Leader>s :BLines<cr>
 
