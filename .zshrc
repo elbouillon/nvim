@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Path to your oh-my-zsh installation.
 if [[ `uname` == 'Darwin' ]]
 then
@@ -12,7 +19,10 @@ fi
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+# ZSH_THEME="robbyrussell"
+# ZSH_THEME="gruvbox"
+ZSH_THEME="powerlevel10k/powerlevel10k"
+# SOLARIZED_THEME="dark"
 # ZSH_THEME="agnoster"
 
 # https://github.com/robwilliams/dotfiles/commit/46c5cda492f03c34151bc46366a621f48ca36d34
@@ -68,6 +78,8 @@ plugins=(git autojump git-flow rbenv bundler osx colored-man-pages history docke
 if [[ `uname` == 'Linux' ]]
 then
   export PATH=$PATH:~/.rbenv/shims:/usr/share
+  # OVERMIND
+  export PATH=$PATH:~/bin
   # export PATH=$PATH:~/.rbenv/shims:~/.rbenv/versions/2.2.3/lib/gems/2.2.0/gems:/usr/share
 else
   # fix problem using osx git instead of the brand new one from brew
@@ -79,7 +91,7 @@ export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
 # export MANPATH="/usr/local/man:$MANPATH"
 # https://yarnpkg.com/en/docs/install
-export PATH="$PATH:`yarn global bin`"
+# export PATH="$PATH:`yarn global bin`"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -121,3 +133,6 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

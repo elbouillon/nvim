@@ -20,6 +20,9 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
+
+Plug 'leafOfTree/vim-vue-plugin'
+
 " === Editing Plugins === "
 " Trailing whitespace highlighting & automatic fixing
 Plug 'ntpeters/vim-better-whitespace'
@@ -32,6 +35,7 @@ Plug 'easymotion/vim-easymotion'
 
 " Intellisense Engine
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'iamcco/coc-tailwindcss',  {'do': 'yarn install --frozen-lockfile && yarn run build'}
 
 Plug 'tpope/vim-rails'
 
