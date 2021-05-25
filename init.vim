@@ -308,7 +308,7 @@ nmap <silent> <leader><space> :nohlsearch<CR>
 
 " === Easy-motion shortcuts ==="
 "   <leader>w - Easy-motion highlights first word letters bi-directionally
-map <leader>w <Plug>(easymotion-bd-w)
+map <leader>j <Plug>(easymotion-bd-w)
 
 " Allows you to save files you opened without write permissions via sudo
 cmap w!! w !sudo tee %
@@ -363,8 +363,9 @@ nnoremap <leader>q :q<CR>
 imap éé <Esc>
 nnoremap Q @q   " Use Q to execute default register.
 nmap <CR> o<Esc>
-let test#strategy = "basic"
-let test#ruby#rspec#executable = 'docker-compose run --rm test rspec'
+" let test#strategy = "basic"
+" let test#ruby#rspec#executable = 'docker-compose run --rm test rspec'
+let test#ruby#rspec#executable = 'RACK_ENV=test bundle exec rspec'
 
 nmap <silent> <leader>t :TestNearest<CR>
 nmap <silent> <leader>T :TestFile<CR>
@@ -386,3 +387,8 @@ vnoremap <Space> za
 set noswapfile
 set nobackup
 set nowb
+
+" https://vim.fandom.com/wiki/Resize_splits_more_quickly
+nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
+nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
+nnoremap <silent> <Leader>= <C-W>=<CR>
