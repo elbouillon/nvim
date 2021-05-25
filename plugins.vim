@@ -33,8 +33,7 @@ Plug 'easymotion/vim-easymotion'
 " Intellisense Engine
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" Denite - Fuzzy finding, buffer management
-" Plug 'Shougo/denite.nvim'
+Plug 'tpope/vim-rails'
 
 " Snippet support
 " Plug 'Shougo/neosnippet'
